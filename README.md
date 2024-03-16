@@ -1,4 +1,6 @@
 Para a boa funcionalidade do script as ferramentas a seguir devem estar instalas corretamente:
+
+
 -subfinder
 -gau
 -aquatone
@@ -13,4 +15,4 @@ Para a boa funcionalidade do script as ferramentas a seguir devem estar instalas
 
 Para executar o script ultilize o seguinte comando:
 
-bash RedEyes.sh nome_pasta link(sem https) IP
+bash Killing_hearts.sh nome_pasta link(sem https) IP
