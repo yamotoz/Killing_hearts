@@ -117,7 +117,7 @@ enum4linux -a $3 | tee usersLogs.txt;
 subsgau | gf idor | tee poss_idor.txt;
 subsgau | gf sqli | tee poss_sql.txt;
 subsgau | gf redirect | tee poss_redirect.txt;
-subsgau | gf lfi | tee poss_lfi.txt
+subsgau | gf lfi | tee poss_lfi.txt;
 mkdir domain_files;
 mv fuzz.txt usersLogs.txt  dns.txt nmapFull.txt subsgau.txt takeover.txt domain_files;
 mkdir vuln_param;
