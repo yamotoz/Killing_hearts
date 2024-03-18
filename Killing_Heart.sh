@@ -106,7 +106,7 @@ esac
 mkdir $1;
 cd $1;
 subfinder -d $2 | tee subs.txt;
-cat subs.txt | gau | subsgau.txt;
+cat subs.txt | gau | tee subsgau.txt;
 cat subsgau.txt | aquatone | tee subsON.txt;
 rm subs.txt;
 subzy r --targets subsgau.txt | tee takeover.txt;
@@ -122,7 +122,7 @@ mv fuzz.txt usersLogs.txt  dns.txt subsgau.txt takeover.txt domain_files;
 mkdir vuln_param;
 mv poss_idor.txt poss_sql.txt poss_lfi.txt poss_redirect.txt vuln_param; 
 nmapAutomator.sh --host $2 --type All | tee nmapFull.txt;
-mv  nmapFull.txt domain_files
+mv  nmapFull.txt domain_files;
 
 
 
