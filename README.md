@@ -14,9 +14,13 @@ Para a boa funcionalidade do script as ferramentas a seguir devem estar instalas
 
 
 Para executar o script ultilize o seguinte comando:
+                           1            2          3     4
+bash Killing_hearts.sh nome_pasta link(sem https) IP  -all/-ALL
 
-bash Killing_hearts.sh nome_pasta link(sem https) IP
 
+
+
+obs: caso não tenha os scripts  necessários, digite no FINAL do comando -all ou -ALL para baixá-los e rodar.
 
 
 

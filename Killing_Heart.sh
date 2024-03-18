@@ -69,6 +69,21 @@ echo "                      _______________________¶1¶¶¶1¶¶¶_____________
 sleep 0.5;
 echo "                      ___________________________11¶____________________\e[37m]";
 
+case $4 in 
+-all|-ALL) ;;
+*) Sintaxe invalida;;
+esac
+
+
+
+
+
+
+
+
+
+
+
 mkdir $1;
 cd $1;
 subfinder -d $2 | tee subs.txt;
