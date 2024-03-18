@@ -110,7 +110,6 @@ cat subs.txt | gau | subsgau.txt;
 cat subsgau.txt | aquatone | tee subsON.txt;
 rm subs.txt;
 subzy r --targets subsgau.txt | tee takeover.txt;
-nmapAutomator.sh --host $2 --type All | tee nmapFull.txt;
 dnsenum $2 | tee dns.txt;
 paramspider -d $2 | tee fuzz.txt;
 enum4linux -a $3 | tee usersLogs.txt;
@@ -119,9 +118,11 @@ subsgau | gf sqli | tee poss_sql.txt;
 subsgau | gf redirect | tee poss_redirect.txt;
 subsgau | gf lfi | tee poss_lfi.txt;
 mkdir domain_files;
-mv fuzz.txt usersLogs.txt  dns.txt nmapFull.txt subsgau.txt takeover.txt domain_files;
+mv fuzz.txt usersLogs.txt  dns.txt subsgau.txt takeover.txt domain_files;
 mkdir vuln_param;
 mv poss_idor.txt poss_sql.txt poss_lfi.txt poss_redirect.txt vuln_param; 
+nmapAutomator.sh --host $2 --type All | tee nmapFull.txt;
+mv  nmapFull.txt domain_files
 
 
 
