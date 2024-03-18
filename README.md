@@ -9,6 +9,7 @@ Para a boa funcionalidade do script as ferramentas a seguir devem estar instalas
 -paramspider
 -enum4linux
 -nmapAutomator
+-gf
 
 
 
@@ -20,7 +21,10 @@ bash Killing_hearts.sh nome_pasta link(sem https) IP  -all/-ALL
 
 
 
-obs: caso não tenha os scripts  necessários, digite no FINAL do comando -all ou -ALL para baixá-los e rodar.
+obs1: caso não tenha os scripts  necessários, digite no FINAL do comando -all ou -ALL para baixá-los e rodar.
+
+obs2: A instalação de algumas ferramentas estarão no root, então recomendo
+que usem o script por lá também.
 
 
 

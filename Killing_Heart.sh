@@ -70,16 +70,35 @@ sleep 0.5;
 echo "                      ___________________________11¶____________________\e[37m]";
 
 case $4 in 
--all|-ALL) ;;
+-all|-ALL)apt-get install subfinder;
+apt-get install golang -y;
+apt-get install dnsenum; git clone  https://github.com/devanshbatham/paramspider; cd paramspider; pip install;
+cd ..; apt-get install enum4linux; apt-get install chromium;
+wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip -y;
+unzip aquatone_linux_amd64_1.7.0.zip; rm -rf aquatone_linux_amd64_1.7.0.zip LICENSE.txt README.md;
+go install -v github.com/LukaSikic/subzy@latest;
+go install github.com/lc/gau/v2/cmd/gau@latest; 
+git clone https://github.com/21y4d/nmapAutomator.git;
+cd nmapAutomator;
+mv nmapAutomator.sh /bin;
+cd /root;
+go install github.com/tomnomnom/gf@latest;
+cd /root;
+mkdir .gf;
+cd .gf;
+wget https://raw.githubusercontent.com/1ndianl33t/Gf-Patterns/master/lfi.json;
+chmod +x lfi.json;
+wget https://raw.githubusercontent.com/1ndianl33t/Gf-Patterns/master/redirect.json;
+chmod +x redirect.json;
+wget https://raw.githubusercontent.com/1ndianl33t/Gf-Patterns/master/sqli.json;
+chmod +x sqli.json;
+wget https://raw.githubusercontent.com/1ndianl33t/Gf-Patterns/master/idor.json;
+chmod +x idor.json;
+cd /root/go/bin;
+mv * /bin;
+cd /root; ;;
 *) Sintaxe invalida;;
 esac
-
-
-
-
-
-
-
 
 
 
@@ -95,15 +114,21 @@ nmapAutomator.sh --host $2 --type All | tee nmapFull.txt;
 dnsenum $2 | tee dns.txt;
 paramspider -d $2 | tee fuzz.txt;
 enum4linux -a $3 | tee usersLogs.txt;
-mkdir files;
-mv fuzz.txt usersLogs.txt  dns.txt nmapFull.txt files;
+subsgau | gf idor | tee poss_idor.txt;
+subsgau | gf sqli | tee poss_sql.txt;
+subsgau | gf redirect | tee poss_redirect.txt;
+subsgau | gf lfi | tee poss_lfi.txt
+mkdir domain_files;
+mv fuzz.txt usersLogs.txt  dns.txt nmapFull.txt subsgau.txt domain_files;
+mkdir vuln_param;
+mv poss_idor.txt poss_sql.txt poss_lfi.txt poss_redirect.txt vuln_param; 
 
 
 
 
 echo ".)..)..)..)..)..
 ███████ ═╮
-███████ ▏ ∥
+███M███ ▏ ∥
 ███████ ═╯
 ◥█████◤
 Good morning"
