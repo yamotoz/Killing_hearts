@@ -107,7 +107,6 @@ mkdir $1;
 cd $1;
 subfinder -d $2 | tee subs.txt;
 cat subs.txt | gau | tee subsgau.txt;
-cat subsgau.txt | aquatone | tee subsON.txt;
 rm subs.txt;
 dnsenum $2 | tee dns.txt;
 paramspider -d $2 | tee fuzz.txt;
@@ -122,7 +121,8 @@ mkdir vuln_param;
 mv poss_idor.txt poss_sql.txt poss_lfi.txt poss_redirect.txt vuln_param; 
 subzy r --targets subsgau.txt;
 nmapAutomator.sh --host $2 --type All | tee nmapFull.txt;
-mv  nmapFull.txt subsgau.txt domain_files;
+cat subsgau.txt | aquatone | tee subsON.txt;
+mv  nmapFull.txt subsgau.txt subsON.txt domain_files;
 
 
 
