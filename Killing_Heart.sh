@@ -109,7 +109,7 @@ subfinder -d $2 | tee subs.txt;
 cat subs.txt | gau | tee subsgau.txt;
 cat subsgau.txt | aquatone | tee subsON.txt;
 rm subs.txt;
-subzy r --targets subsgau.txt | tee takeover.txt;
+subzy r --targets subsgau.txt;
 dnsenum $2 | tee dns.txt;
 paramspider -d $2 | tee fuzz.txt;
 enum4linux -a $3 | tee usersLogs.txt;
