@@ -1,6 +1,6 @@
 /#!/bin/bash
 
-echo "██╗  ██╗██╗██╗     ██╗     ██╗███╗   ██╗ ██████╗     ██╗  ██╗███████╗ █████╗ ██████╗ ████████╗";
+echo -e "\e[31m██╗  ██╗██╗██╗     ██╗     ██╗███╗   ██╗ ██████╗     ██╗  ██╗███████╗ █████╗ ██████╗ ████████╗";
 sleep 0.5;
 echo "██║ ██╔╝██║██║     ██║     ██║████╗  ██║██╔════╝     ██║  ██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝";
 sleep 0.5;
@@ -10,7 +10,7 @@ echo "██╔═██╗ ██║██║     ██║     ██║██
 sleep 0.5;
 echo "██║  ██╗██║███████╗███████╗██║██║ ╚████║╚██████╔╝    ██║  ██║███████╗██║  ██║██║  ██║   ██║   ";
 sleep 0.5;
-echo "╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ";
+echo -e "╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   \e[37m";
 sleep 1;
 echo "                                      created by yamotoz                                       ";
 sleep 0.5;
@@ -67,7 +67,7 @@ echo "                      ____________________¶¶¶¶¶¶1¶¶¶¶¶1¶______
 sleep 0.5;
 echo "                      _______________________¶1¶¶¶1¶¶¶__________________";
 sleep 0.5;
-echo "                      ___________________________11¶____________________\e[37m]";
+echo "                      ___________________________11¶____________________\e[37m";
 
 case $4 in 
 -all|-ALL)apt-get install subfinder;
@@ -109,7 +109,7 @@ subfinder -d $2 | tee subs.txt;
 cat subs.txt | gau | subsgau.txt;
 cat subsgau.txt | aquatone | tee subsON.txt;
 rm subs.txt;
-subzy r --targets subsgau.txt | tee gauresult.txt;
+subzy r --targets subsgau.txt | tee takeover.txt;
 nmapAutomator.sh --host $2 --type All | tee nmapFull.txt;
 dnsenum $2 | tee dns.txt;
 paramspider -d $2 | tee fuzz.txt;
@@ -119,7 +119,7 @@ subsgau | gf sqli | tee poss_sql.txt;
 subsgau | gf redirect | tee poss_redirect.txt;
 subsgau | gf lfi | tee poss_lfi.txt
 mkdir domain_files;
-mv fuzz.txt usersLogs.txt  dns.txt nmapFull.txt subsgau.txt domain_files;
+mv fuzz.txt usersLogs.txt  dns.txt nmapFull.txt subsgau.txt takeover.txt domain_files;
 mkdir vuln_param;
 mv poss_idor.txt poss_sql.txt poss_lfi.txt poss_redirect.txt vuln_param; 
 
