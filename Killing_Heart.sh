@@ -122,8 +122,8 @@ mkdir vuln_param;
 mv poss_idor.txt poss_sql.txt poss_lfi.txt poss_redirect.txt vuln_param; 
 subzy r --targets subsgau.txt;
 nmapAutomator.sh --host $2 --type All | tee nmapFull.txt;
-cat subsgau.txt | aquatone | tee subsON.txt;
-mv  nmapFull.txt subsgau.txt subsON.txt domain_files;
+cat subsgau.txt | aquatone;
+mv  nmapFull.txt subsgau.txt domain_files;
 
 
 
