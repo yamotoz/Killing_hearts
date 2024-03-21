@@ -1,4 +1,4 @@
-Para a boa funcionalidade do script as ferramentas a seguir devem estar instalas corretamente:
+For the good functionality of the script, the following tools must be installed correctly:
 
 
 -subfinder
@@ -10,28 +10,29 @@ Para a boa funcionalidade do script as ferramentas a seguir devem estar instalas
 -enum4linux
 -nmapAutomator
 -gf
+-Gobuster
 
 
 
 
-Para executar e instalar o script ultilize o seguinte comando:
+To run and install the script, use the following command:
                           
 git clone https://github.com/yamotoz/Killing_hearts
 cd Killing_hearts
 chmod +x Killing _Hearts.sh
 
-Simples usage:
+Simple usage:
 
-bash Killing_hearts.sh nome_pasta link(sem https) IP  -all/-ALL;
-
-
-
-
-obs1: caso não tenha os scripts  necessários, digite no FINAL do comando -all ou -ALL para baixá-los e rodar.
-
-obs2: A instalação de algumas ferramentas estarão no root, então recomendo
-que usem o script por lá também.
+bash Killing_hearts.sh folder_name link(without https) IP  -all/-ALL;
 
 
 
-Este script foi criado para fins educacionais e de demonstração. Não deve ser usado para fins maliciosos. eu(yamotoz) não se responsabiliza pelo uso indevido deste script.
+
+note1: if you do not have the necessary scripts, type at the END of the command -all or -ALL to download and run them.
+
+note2: The installation of some tools will be in the root, so I recommend
+that you use the script there too.
+
+
+
+This script was created for educational and demonstration purposes. It should not be used for malicious purposes. I (yamotoz) do not take responsibility for the misuse of this script.
