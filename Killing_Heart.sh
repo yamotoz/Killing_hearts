@@ -109,7 +109,6 @@ subfinder -d $2 | tee subs.txt;
 cat subs.txt | gau | tee subsgau.txt;
 rm subs.txt;
 dnsenum $2 | tee dns.txt;
-paramspider -d $2 | tee fuzz.txt;
 enum4linux -a $3 | tee usersLogs.txt;
 cat subsgau.txt | gf idor | tee poss_idor.txt;
 cat subsgau.txt | gf sqli | tee poss_sql.txt;

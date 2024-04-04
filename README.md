@@ -6,7 +6,6 @@ For the good functionality of the script, the following tools must be installed 
 -aquatone
 -subzy
 -dnsenum
--paramspider
 -enum4linux
 -nmapAutomator
 -gf
