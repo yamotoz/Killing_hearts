@@ -10,6 +10,7 @@ For the good functionality of the script, the following tools must be installed 
 -nmapAutomator
 -gf
 -Gobuster
+-httpx
 
 
 

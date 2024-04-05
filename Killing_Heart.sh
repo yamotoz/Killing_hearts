@@ -79,6 +79,7 @@ unzip aquatone_linux_amd64_1.7.0.zip; rm -rf aquatone_linux_amd64_1.7.0.zip LICE
 go install -v github.com/LukaSikic/subzy@latest;
 go install github.com/lc/gau/v2/cmd/gau@latest; 
 git clone https://github.com/21y4d/nmapAutomator.git;
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest;
 cd nmapAutomator;
 mv nmapAutomator.sh /bin;
 cd /root;
@@ -94,8 +95,6 @@ wget https://raw.githubusercontent.com/1ndianl33t/Gf-Patterns/master/sqli.json;
 chmod +x sqli.json;
 wget https://raw.githubusercontent.com/1ndianl33t/Gf-Patterns/master/idor.json;
 chmod +x idor.json;
-cd /root/go/bin;
-mv * /bin;
 cd /root; ;;
 *) Sintaxe invalida;;
 esac
@@ -118,7 +117,8 @@ gobuster -u https://$1 -w /usr/share/wordlists/dirb/common.txt -o gobuster.txt;
 mkdir domain_files;
 mv fuzz.txt usersLogs.txt  dns.txt takeover.txt gobuster.txt domain_files;
 mkdir vuln_param;
-mv poss_idor.txt poss_sql.txt poss_lfi.txt poss_redirect.txt vuln_param; 
+mv poss_idor.txt poss_sql.txt poss_lfi.txt poss_redirect.txt vuln_param;
+httpx -status-code -title -tech-detect -fc 400,302,404,402 -list subsgau.txt -o subsgauON.txt; 
 subzy r --targets subsgau.txt;
 nmapAutomator.sh --host $2 --type All | tee nmapFull.txt;
 cat subsgau.txt | aquatone;
