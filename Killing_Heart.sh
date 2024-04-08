@@ -120,18 +120,19 @@ mv fuzz.txt usersLogs.txt  dns.txt takeover.txt gobuster.txt domain_files;
 mkdir vuln_param;
 mv poss_idor.txt poss_sql.txt poss_lfi.txt poss_redirect.txt vuln_param;
 httpx -status-code -title -tech-detect -fc 400,302,404,402 -list subsgau.txt -o subsgauON.txt; 
+# subzy test
+sub = "";
+read -p "Do you want to perform a takeover on the site's subdomains?(yes/y/no)" sub;
+if [$sub  == "y"] || [$sub == "yes"]; then
 subzy r --targets subsgau.txt;
 nmapAutomator.sh --host $2 --type All | tee nmapFull.txt;
 cat subsgau.txt | aquatone;
 mv  nmapFull.txt subsgau.txt domain_files;
-
-
-
-
+else
 echo ".)..)..)..)..)..
 ███████ ═╮
 ███M███ ▏ ∥
 ███████ ═╯
 ◥█████◤
 Good morning"
-            
+fi            
