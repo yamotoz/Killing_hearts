@@ -95,6 +95,7 @@ wget https://raw.githubusercontent.com/1ndianl33t/Gf-Patterns/master/sqli.json;
 chmod +x sqli.json;
 wget https://raw.githubusercontent.com/1ndianl33t/Gf-Patterns/master/idor.json;
 chmod +x idor.json;
+apt install subjack;
 cd /root; ;;
 *) Sintaxe invalida;;
 esac
@@ -130,15 +131,21 @@ clear;
 sub = "";
 read -p "Do you want to perform a takeover on the site's subdomains?(yes/y/no)" sub;
 if [$sub  == "y"] || [$sub == "yes"]; then
-subzy r --targets subsgau.txt;
-nmapAutomator.sh --host $2 --type All | tee nmapFull.txt;
-cat subsgau.txt | aquatone;
-mv  nmapFull.txt subsgau.txt domain_files;
+mkdir takeoverFiles;
+cd takeoverFiles;
+subjack -w subsgau.txt -v | tee subjack.txt
+subzy r --targets subsgau.txt | tee subzy.txt;
+cd ..;
 else
+# nmap_automator/aquatone
+nmapAutomator.sh --host $2 --type All | tee nmapFull.txt;
+mv  nmapFull.txt domain_files;
+cat subsgau.txt | aquatone;
 echo ".)..)..)..)..)..
 ███████ ═╮
 ███M███ ▏ ∥
 ███████ ═╯
 ◥█████◤
 Good morning"
-fi            
+fi           
+
