@@ -150,7 +150,7 @@ mv poss_idor.txt poss_sql.txt poss_lfi.txt poss_redirect.txt vuln_param;
 # subzy test
 clear;
 sub="";
-echo "Do you want to perform a takeover on the site's subdomains?(yes/y/no)" sub;
+read -p "Do you want to perform a takeover on the site's subdomains?(yes/y/no)" sub;
 if ["$sub" = "y"] || ["$sub" = "yes"]; then
     mkdir takeoverFiles;
     cd takeoverFiles;
