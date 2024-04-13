@@ -110,9 +110,15 @@ cat subs.txt | gau | tee subsgau.txt;
 rm subs.txt;
 sort subsgau.txt | uniq | tee subsALL.txt;
 
+echo ".";
+sleep 0.3;
+echo ".";
+sleep 0.3;
+echo ".";
+sleep 0.3;
 
 #dnsenum
-dnsenum $2 | tee dns.txt;
+dnsenum -v $2 | tee dns.txt;
 
 
 #enum4linux
