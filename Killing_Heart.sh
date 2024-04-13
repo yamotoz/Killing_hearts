@@ -108,27 +108,40 @@ cd $1;
 subfinder -d $2 | tee subs.txt;
 cat subs.txt | gau | tee subsgau.txt;
 rm subs.txt;
+
+
 #dnsenum
 dnsenum $2 | tee dns.txt;
+
+
 #enum4linux
 enum4linux -a $3 | tee usersLogs.txt;
+
+
 #separação de possiveis parametros vulneraveis encontrados por pastas
 cat subsgau.txt | gf idor | tee poss_idor.txt;
 cat subsgau.txt | gf sqli | tee poss_sql.txt;
 cat subsgau.txt | gf redirect | tee poss_redirect.txt;
 cat subsgau.txt | gf lfi | tee poss_lfi.txt;
 wget https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/directory-list-2.3-medium.txt;
+
+
 #Iniciando gobuster em busca de todos os diretorios possiveis
 gobuster dir -s '200','403','500' -u https://$1 -w directory-list-2.3-medium.txt -o gobuster.txt;
 mkdir domain_files;
 mv fuzz.txt usersLogs.txt  dns.txt takeover.txt gobuster.txt domain_files;
 mkdir vuln_param;
 mv poss_idor.txt poss_sql.txt poss_lfi.txt poss_redirect.txt vuln_param;
+
+
+
 #iniciando o teste de validação com o httpx
 httpx -status-code -title -tech-detect -fc 400,302,404,402 -list subsgau.txt -o subsgauON.txt; 
+
+
 # subzy test
 clear;
-sub = "";
+sub="";
 read -p "Do you want to perform a takeover on the site's subdomains?(yes/y/no)" sub;
 if [$sub  == "y"] || [$sub == "yes"]; then
 mkdir takeoverFiles;
@@ -137,6 +150,9 @@ subjack -w subsgau.txt -v | tee subjack.txt
 subzy r --targets subsgau.txt | tee subzy.txt;
 cd ..;
 else
+
+
+
 # nmap_automator/aquatone
 nmapAutomator.sh --host $2 --type All | tee nmapFull.txt;
 mv  nmapFull.txt domain_files;
