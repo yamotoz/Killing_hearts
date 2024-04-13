@@ -151,7 +151,7 @@ mv poss_idor.txt poss_sql.txt poss_lfi.txt poss_redirect.txt vuln_param;
 clear;
 sub="";
 read -p "Do you want to perform a takeover on the site's subdomains?(yes/y/no)" sub;
-if [$sub  = "y"] || [$sub = "yes"]; then
+if [[$sub  == "y"] || [$sub == "yes"]]; then
 mkdir takeoverFiles;
 cd takeoverFiles;
 subjack -w subsALL.txt -v | tee subjack.txt
@@ -162,8 +162,11 @@ else
 
 
 # nmap_automator/aquatone
+git clone https://github.com/21y4d/nmapAutomator;
+cd nmapAutomator;
 nmapAutomator.sh --host $2 --type All | tee nmapFull.txt;
 mv  nmapFull.txt domain_files;
+cd ..;
 cat subsALL.txt | aquatone;
 echo ".)..)..)..)..)..
 ███████ ═╮
