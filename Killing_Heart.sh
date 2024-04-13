@@ -158,6 +158,18 @@ if [ "$sub" = "y" ]; then
     subjack -w subsALL.txt -v | tee subjack.txt;
     subzy r --targets subsALL.txt | tee subzy.txt;
     cd ..;
+# nmap_automator/aquatone
+    git clone https://github.com/21y4d/nmapAutomator;
+    cd nmapAutomator;
+    ./nmapAutomator.sh --host $2 --type All | tee ../domain_files/nmapFull.txt;
+    cd ..;
+    cat subsALL.txt | aquatone;
+    echo ".)..)..)..)..)..
+███████ ═╮
+███M███ ▏ ∥
+███████ ═╯
+◥█████◤
+Good morning";
 else
     # nmap_automator/aquatone
     git clone https://github.com/21y4d/nmapAutomator;
