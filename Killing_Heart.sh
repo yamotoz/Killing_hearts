@@ -153,6 +153,7 @@ sub="";
 read -p "Do you want to perform a takeover on the site's subdomains?(yes/y/no)" sub;
 if [ "$sub" = "y" ]; then
     mkdir takeoverFiles;
+    cp subsALL.txt takeoverFiles;
     cd takeoverFiles;
     subjack -w subsALL.txt -v | tee subjack.txt;
     subzy r --targets subsALL.txt | tee subzy.txt;
