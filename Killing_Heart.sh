@@ -106,7 +106,7 @@ esac
 mkdir $1;
 cd $1;
 subfinder -d $2 | tee subs.txt;
-cat subs.txt | gau | tee subsgau.txt;
+cat subs.txt | gau | uro | httpx -silent | tee subsgau.txt;
 rm subs.txt;
 sort subsgau.txt | uniq | tee subsALL.txt;
 
@@ -118,11 +118,11 @@ echo ".";
 sleep 0.3;
 
 #dnsenum
-#dnsenum -v $2 | tee dns.txt;
+dnsenum -v $2 | tee dns.txt;
 
 
 #enum4linux
-#enum4linux -a $3 | tee usersLogs.txt;
+enum4linux -a $3 | tee usersLogs.txt;
 
 
 #separação de possiveis parametros vulneraveis encontrados por pastas
@@ -135,16 +135,12 @@ wget https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Conten
 
 
 #Iniciando gobuster em busca de todos os diretorios possiveis
-#gobuster dir -s '200','403','500' -u https://$1 -w directory-list-2.3-medium.txt -o gobuster.txt;
+gobuster dir -s '200','403','500' -u https://$1 -w directory-list-2.3-medium.txt -o gobuster.txt;
 mkdir domain_files;
 mv fuzz.txt usersLogs.txt  dns.txt takeover.txt gobuster.txt domain_files;
 mkdir vuln_param;
 mv poss_idor.txt poss_sql.txt poss_lfi.txt poss_redirect.txt vuln_param;
 
-
-
-#iniciando o teste de validação com o httpx
-#httpx -status-code -title -tech-detect -fc 400,302,404,402 -list subsALL.txt -o subsgauON.txt; 
 
 
 # subzy test
