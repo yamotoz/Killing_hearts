@@ -96,6 +96,8 @@ chmod +x sqli.json;
 wget https://raw.githubusercontent.com/1ndianl33t/Gf-Patterns/master/idor.json;
 chmod +x idor.json;
 apt install subjack;
+pip3 install uro;
+apt install theharvester.
 cd /root; ;;
 *) Sintaxe invalida;;
 esac
@@ -119,6 +121,11 @@ sleep 0.3;
 
 #dnsenum
 dnsenum -v $2 | tee dns.txt;
+
+# email check, spf check
+host -T $2 | tee conferir.txt;
+# analise para ver se tem ?all ou ~all, se sim? entre no site emkei.cz
+theharvester --source all -d $2 | tee emails.txt; 
 
 
 #enum4linux
