@@ -108,7 +108,7 @@ esac
 mkdir $1;
 cd $1;
 subfinder -d $2 | tee subs.txt;
-cat subs.txt | gau | uro | httpx -silent | tee subsgau.txt;
+cat subs.txt | katana -d 1 | uro | httpx -silent | tee subsgau.txt;
 rm subs.txt;
 sort subsgau.txt | uniq | tee subsALL.txt;
 
