@@ -19,15 +19,22 @@
 
 
  ## To run and install the script, use the following command:
-                          
+```bash                          
 git clone https://github.com/yamotoz/Killing_hearts
+```
+```bash
 cd Killing_hearts
+```
+```bash
 chmod +x Killing _Hearts.sh
+```
 
-Simple usage:
 
+## Simple usage:
+
+```bash
 bash Killing_hearts.sh folder_name link(without https) IP  -all/-ALL;
-
+```
 
 
 
