@@ -41,11 +41,12 @@ bash Killing_hearts.sh folder_name link(without https) IP  -all/-ALL;
 
 
 
-note1: if you do not have the necessary scripts, type at the END of the command -all or -ALL to download and run them.
+Note: if you do not have the necessary scripts, type at the END of the command -all or -ALL to download and run them.
 
-note2: The installation of some tools will be in the root, so I recommend
+
+Note: The installation of some tools will be in the root, so I recommend
 that you use the script there too.
 
 
 
-This script was created for educational and demonstration purposes. It should not be used for malicious purposes. I (yamotoz) do not take responsibility for the misuse of this script.
+Note: ** This script was created for educational and demonstration purposes. It should not be used for malicious purposes. I (yamotoz) do not take responsibility for the misuse of this script. **
