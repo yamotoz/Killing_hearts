@@ -49,4 +49,4 @@ that you use the script there too.
 
 
 
-Note: ** This script was created for educational and demonstration purposes. It should not be used for malicious purposes. I (yamotoz) do not take responsibility for the misuse of this script. **
+Note: **This script was created for educational and demonstration purposes. It should not be used for malicious purposes. I (yamotoz) do not take responsibility for the misuse of this script.**
