@@ -49,4 +49,7 @@ that you use the script there too.
 
 
 
-Note: **This script was created for educational and demonstration purposes. It should not be used for malicious purposes. I (yamotoz) do not take responsibility for the misuse of this script.**
+## Information
+-  I do not take responsibility for the **misuse of the program.** This is a script for legal use and to study the programming and pentest area, never use the installed tools to **harm**, **destroy**, **adulterate**, **tarnish** or **belittle anyone's image**
+
+-  Let it be known that I hereby extend my full support and leadership to the creators of the scripts utilized herein, and I attribute **ALL** credits to them. In this script, my sole endeavor lies in their combined utilization to broaden the understanding of vulnerabilities within the pertinent website that the user shall visit.
