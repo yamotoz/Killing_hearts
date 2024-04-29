@@ -1,21 +1,24 @@
-For the good functionality of the script, the following tools must be installed correctly:
+
+<img src="src/heart.jpg">
+
+## For the good functionality of the script, the following tools must be installed correctly:
 
 
--subfinder
--gau
--aquatone
--subzy
--dnsenum
--enum4linux
--nmapAutomator
--gf
--Gobuster
--httpx
+- [x] subfinder
+- [x] gau
+- [x] aquatone
+- [x] subzy
+- [x] dnsenum
+- [x] enum4linux
+- [x] nmapAutomator
+- [x] gf
+- [x] Gobuster
+- [x] httpx
 
 
 
 
-To run and install the script, use the following command:
+ ## To run and install the script, use the following command:
                           
 git clone https://github.com/yamotoz/Killing_hearts
 cd Killing_hearts
