@@ -1,3 +1,6 @@
+## Killing hearts
+It's a dedicated script for analyzing the website in question and assessing subdomain takeover, with its primary function being site recognition. If you wish to conduct a vulnerability analysis, take a look at Angel Azazel.
+
 
 <img src="src/heart.jpg">
 
