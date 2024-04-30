@@ -1,5 +1,8 @@
 ## Killing hearts
-It's a dedicated script for **analyzing the website** in question and assessing **subdomain takeover**, with its primary function being site recognition. If you wish to conduct a vulnerability analysis, take a look at<a style="color: grey" href="https://github.com/yamotoz/Angel_Azazel"><b> Angel Azazel</b></a>.
+ <img src="https://img.shields.io/badge/Status-Beta-orange"> <img src="https://img.shields.io/badge/Licence-MIT-yellowgreen"><img src="https://img.shields.io/badge/Download-Now-green">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg"  height=30 width=40 />
+            
+-  It's a dedicated script for **analyzing the website** in question and assessing **subdomain takeover**, with its primary function being site recognition. If you wish to conduct a vulnerability analysis, take a look at<a style="color: grey" href="https://github.com/yamotoz/Angel_Azazel"><b> Angel Azazel</b></a>.
 
 
 <img src="src/heart.jpg">
